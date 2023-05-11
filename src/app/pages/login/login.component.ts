@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit{
         username,
         password
       }
+
+      console.log(loginBody);
  
       this.services.login(loginBody).subscribe((loginRecive) => {
 
@@ -61,6 +63,9 @@ export class LoginComponent implements OnInit{
           }
         }
       })
+    }else{
+      //TODO: alerta
+      alert("Ingresa todos los datos.");
     }
 
   }

@@ -18,10 +18,10 @@
                 </div>
                 <div class="etiqueta">
                     <label for="password">Contraseña</label>
-                    <input name="password" type="text" placeholder="password" formControlName="password">
+                    <input name="password" type="password" placeholder="password" formControlName="password">
                 </div>
                 <div class="etiqueta">
-                    <button class="btningresar">Ingresar</button>
+                    <button class="btningresar" (click)="login_event()">Ingresar</button>
                 </div>
             </form>
         </div>
