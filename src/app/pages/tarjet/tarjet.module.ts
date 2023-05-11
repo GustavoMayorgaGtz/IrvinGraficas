@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageRoutingModule } from './page-routing.module';
+import { TarjetRoutingModule } from './tarjet-routing.module';
 
 
 
 @NgModule({
-  declarations: [
-  
-
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    PageRoutingModule
+    TarjetRoutingModule
   ]
 })
-export class PageModule { }
+export class TarjetModule { }
