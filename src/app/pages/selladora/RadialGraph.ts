@@ -3,7 +3,8 @@ import {
     ApexPlotOptions,
     ApexChart,
     ApexFill,
-    ApexStroke
+    ApexStroke,
+    ChartComponent
   } from "ng-apexcharts";
 
 export class RadialGraph{
@@ -11,10 +12,11 @@ export class RadialGraph{
     public series: ApexNonAxisChartSeries = [75]
 
     public chart: ApexChart = {
-      height: 350,
+      width: "100%",
+      height: "100%",
       type: "radialBar",
       toolbar: {
-        show: true
+        show: false
       }
     }
   
@@ -101,6 +103,21 @@ export class RadialGraph{
     //Define el valor porcentual de la grafica
     defineValue(value: number){
        this.series = [value];
+    }
+
+    defineSize(width: number|string, height: number|string){
+        this.chart = {
+            width: width,
+            height: height,
+            type: "radialBar",
+            toolbar: {
+              show: false
+            }
+          }
+    }
+
+    defineColors(){
+        
     }
 
     getParameters(){
