@@ -5,12 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SelladoraComponent } from './selladora/selladora.component';
+import { SelladoraComponent } from './pages/selladora/selladora.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelladoraComponent,
   ],
   imports: [
     BrowserModule,
