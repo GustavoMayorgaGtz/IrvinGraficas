@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// import { NgApexchartsModule} from 'ng-apexcharts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgApexchartsModule } from 'ng-apexcharts';
+
 
 @NgModule({
   declarations: [
@@ -12,9 +12,9 @@ import { NgApexchartsModule } from 'ng-apexcharts';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgApexchartsModule,
+    // NgApexchartsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

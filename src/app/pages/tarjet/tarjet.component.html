@@ -1,8 +1,30 @@
 <div class="contenedor ">
-    <div class="head yellow"> 
-        SELLADORA
-    </div>
-    <div class="body">
-    
-    </div>
+  <div class="head yellow">
+    SELLADORA
+  </div>
+  <div class="body">
+
+    <apx-chart
+    [series]="series2"
+    [chart]="chartRadialBar" 
+    [labels]="labels"
+    [plotOptions]="plotOptions"
+    [fill]="fill"
+   ></apx-chart>
+
+  </div>
 </div>
+<!--  [series]="series"
+        [chart]="chart"
+        [xaxis]="xaxis"
+        [yaxis]="yaxis"
+        [title]="title"
+        [dataLabels]="dataLabels"
+        [stroke]="stroke" 
+      
+      
+       [series]="series2"
+   [chart]="chartRadialBar" 
+   [labels]="labels"
+   [plotOptions]="plotOptions"
+   [fill]="fill"-->
