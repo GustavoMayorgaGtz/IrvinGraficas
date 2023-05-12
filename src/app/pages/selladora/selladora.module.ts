@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelladoraRoutingModule } from './selladora-routing.module';
 import { SelladoraComponent } from './selladora.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 
@@ -9,7 +10,8 @@ import { SelladoraComponent } from './selladora.component';
   declarations: [SelladoraComponent],
   imports: [
     CommonModule,
-    SelladoraRoutingModule
+    SelladoraRoutingModule,
+    NgApexchartsModule
   ]
 })
 export class SelladoraModule { }

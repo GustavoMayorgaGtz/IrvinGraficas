@@ -16,10 +16,6 @@ const routes: Routes = [
       {
         path: "selladora",
         loadChildren: () => import("./selladora/selladora.module").then(m => m.SelladoraModule)
-      },
-      {
-        path: "tarjet",
-        loadChildren: () => import("./tarjet/tarjet.module").then((m => m.TarjetModule))
       }
     ]
   }
