@@ -4,10 +4,11 @@ import { PageRoutingModule } from './page-routing.module';
 
 @NgModule({
   declarations: [
+    
   ],
   imports: [
     CommonModule,
-    PageRoutingModule
+    PageRoutingModule  
   ]
 })
 export class PageModule { }
