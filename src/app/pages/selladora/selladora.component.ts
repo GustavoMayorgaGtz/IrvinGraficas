@@ -16,19 +16,29 @@ export class SelladoraComponent implements OnInit {
   }
 
 
-  public grafica1!:GraficaRadial;
+  public graficaOEE!: GraficaRadial;
+  public graficaD!: GraficaRadial;
+  public graficaR!: GraficaRadial;
+  public graficaC!: GraficaRadial;
   ngOnInit(): void {
-    const grap1 = new RadialGraph();
-    grap1.defineLabel("OEE");
-    grap1.defineValue(100);
-    const {series, chart, labels, plotOptions, fill, stroke } = grap1.getParameters();
-    this.grafica1 = {
-      series,
-      chart,
-      labels,
-      plotOptions,
-      fill,
-      stroke
-    }
+    const graficaOEE = new RadialGraph();
+    graficaOEE.defineLabel("OEE");
+    graficaOEE.defineValue(100);
+    this.graficaOEE= graficaOEE.getParameters();
+    
+    const graficaD = new RadialGraph();
+    graficaD.defineLabel("Disponibilidad");
+    graficaD.defineValue(100);
+    this.graficaD = graficaD.getParameters();
+
+    const graficaR = new RadialGraph();
+    graficaR.defineLabel("Rendimiento");
+    graficaR.defineValue(100);
+    this.graficaR = graficaR.getParameters();
+
+    const graficaC = new RadialGraph();
+    graficaC.defineLabel("Calidad");
+    graficaC.defineValue(100);
+    this.graficaC = graficaC.getParameters();
   }
 }

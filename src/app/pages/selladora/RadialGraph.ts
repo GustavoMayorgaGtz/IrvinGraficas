@@ -6,6 +6,7 @@ import {
     ApexStroke,
     ChartComponent
   } from "ng-apexcharts";
+import { GraficaRadial } from "src/app/Interfaces";
 
 export class RadialGraph{
 
@@ -127,6 +128,9 @@ export class RadialGraph{
         const labels = this.labels;
         const stroke = this.stroke;
         const fill = this.fill;
-       return { series, chart, plotOptions, labels, stroke, fill }
+        const radialGraph: GraficaRadial = {
+          series, chart, plotOptions, labels, stroke, fill
+        }
+       return radialGraph;
     }
 }

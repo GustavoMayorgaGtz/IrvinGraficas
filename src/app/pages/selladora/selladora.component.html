@@ -4,32 +4,40 @@
     </div>
     <div class="container-primary">
         <div class="container-data">
-            <div class="bloque">
-                <div class="container-title">
-                    <div class="line"></div>
-                    <div class="title">OEE</div>
+            <section>
+                <div class="bloque">
+                    <div class="container-title">
+                        <div class="line"></div>
+                        <div class="title">OEE</div>
+                    </div>
                 </div>
-            </div>
-            <div class="bloque-informacion">
-                <div class="informacion">
+                <div class="bloque-informacion">
+                    <div class="informacion">
 
-                    OEE (Overall Equipment Effectiveness) es un indicador utilizado en la gestión de la producción para
-                    medir la eficiencia y el rendimiento de una máquina, línea de producción o planta industrial.
-                    Proporciona una visión integral de la eficiencia general de los equipos utilizados en un proceso de
-                    producción.
+                        OEE (Overall Equipment Effectiveness) es un indicador utilizado en la gestión de la producción
+                        para
+                        medir la eficiencia y el rendimiento de una máquina, línea de producción o planta industrial.
+                        Proporciona una visión integral de la eficiencia general de los equipos utilizados en un proceso
+                        de
+                        producción.
 
+                    </div>
                 </div>
-            </div>
-            <div class="bloque-oee">
-                <apx-chart class="grafica grafica1" [series]="grafica1.series" [chart]="grafica1.chart" [plotOptions]="grafica1.plotOptions"
-                    [labels]="grafica1.labels" [stroke]="grafica1.stroke" [fill]="grafica1.fill"></apx-chart>
-                <apx-chart class="grafica grafica2" [series]="grafica1.series" [chart]="grafica1.chart" [plotOptions]="grafica1.plotOptions"
-                    [labels]="grafica1.labels" [stroke]="grafica1.stroke" [fill]="grafica1.fill"></apx-chart>
-                <apx-chart  class="grafica grafica3" [series]="grafica1.series" [chart]="grafica1.chart" [plotOptions]="grafica1.plotOptions"
-                    [labels]="grafica1.labels" [stroke]="grafica1.stroke" [fill]="grafica1.fill"></apx-chart>
-                <apx-chart class="grafica grafica4" [series]="grafica1.series" [chart]="grafica1.chart" [plotOptions]="grafica1.plotOptions"
-                    [labels]="grafica1.labels" [stroke]="grafica1.stroke" [fill]="grafica1.fill"></apx-chart>
-            </div>
+                <div class="bloque-oee">
+                    <apx-chart class="grafica grafica1" [series]="graficaOEE.series" [chart]="graficaOEE.chart"
+                        [plotOptions]="graficaOEE.plotOptions" [labels]="graficaOEE.labels" [stroke]="graficaOEE.stroke"
+                        [fill]="graficaOEE.fill"></apx-chart>
+                    <apx-chart class="grafica grafica2" [series]="graficaD.series" [chart]="graficaD.chart"
+                        [plotOptions]="graficaD.plotOptions" [labels]="graficaD.labels" [stroke]="graficaD.stroke"
+                        [fill]="graficaD.fill"></apx-chart>
+                    <apx-chart class="grafica grafica3" [series]="graficaR.series" [chart]="graficaR.chart"
+                        [plotOptions]="graficaR.plotOptions" [labels]="graficaR.labels" [stroke]="graficaR.stroke"
+                        [fill]="graficaR.fill"></apx-chart>
+                    <apx-chart class="grafica grafica4" [series]="graficaC.series" [chart]="graficaC.chart"
+                        [plotOptions]="graficaC.plotOptions" [labels]="graficaC.labels" [stroke]="graficaC.stroke"
+                        [fill]="graficaC.fill"></apx-chart>
+                </div>
+            </section>
         </div>
     </div>
 </div>
