@@ -63,23 +63,25 @@
     }
 }
 
-.bloque-oee{
-    display: grid;
+ .bloque-oee {
+    display: flex;
     width: 100%;
-    grid-column: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    
-    .grafica1{
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    .grafica1 {
         grid-column: 1;
-        background-color: red;
     }
-    .grafica2{
+
+    .grafica2 {
         grid-column: 2;
     }
-    .grafica3{
+
+    .grafica3 {
         grid-column: 3;
     }
-    .grafica4{
+
+    .grafica4 {
         grid-column: 4;
     }
 }

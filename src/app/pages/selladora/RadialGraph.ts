@@ -106,6 +106,7 @@ export class RadialGraph{
        this.series = [value];
     }
 
+    //Define el tamaño de la grafica
     defineSize(width: number|string, height: number|string){
         this.chart = {
             width: width,
@@ -117,9 +118,64 @@ export class RadialGraph{
           }
     }
 
+    defineSizeFont(sizeValue?: string, sizeTitle?: string){
+     this.plotOptions = {
+      radialBar: {
+        startAngle: -135,
+        endAngle: 225,
+        hollow: {
+          margin: 0,
+          size: "70%",
+          background: "#fff",
+          image: undefined,
+          position: "front",
+          dropShadow: {
+            enabled: true,
+            top: 3,
+            left: 0,
+            blur: 4,
+            opacity: 0.24
+          }
+        },
+        track: {
+          background: "#fff",
+          strokeWidth: "67%",
+          margin: 0, // margin is in pixels
+          dropShadow: {
+            enabled: true,
+            top: -3,
+            left: 0,
+            blur: 4,
+            opacity: 0.35
+          }
+        },
+  
+        dataLabels: {
+          show: true,
+          name: {
+            offsetY: -10,
+            show: true,
+            color: "#888",
+            fontSize: sizeTitle
+          },
+          value: {
+            formatter: function (val) {
+              return parseInt(val.toString(), 10).toString();
+            },
+            color: "#111",
+            fontSize: sizeValue,
+            show: true
+          }
+        }
+      }
+    }
+    }
+
     defineColors(){
         
     }
+
+
 
     getParameters(){
         const series = this.series;

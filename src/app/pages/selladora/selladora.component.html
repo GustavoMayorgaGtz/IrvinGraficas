@@ -23,19 +23,19 @@
 
                     </div>
                 </div>
-                <div class="bloque-oee">
-                    <apx-chart class="grafica grafica1" [series]="graficaOEE.series" [chart]="graficaOEE.chart"
-                        [plotOptions]="graficaOEE.plotOptions" [labels]="graficaOEE.labels" [stroke]="graficaOEE.stroke"
-                        [fill]="graficaOEE.fill"></apx-chart>
-                    <apx-chart class="grafica grafica2" [series]="graficaD.series" [chart]="graficaD.chart"
-                        [plotOptions]="graficaD.plotOptions" [labels]="graficaD.labels" [stroke]="graficaD.stroke"
-                        [fill]="graficaD.fill"></apx-chart>
-                    <apx-chart class="grafica grafica3" [series]="graficaR.series" [chart]="graficaR.chart"
-                        [plotOptions]="graficaR.plotOptions" [labels]="graficaR.labels" [stroke]="graficaR.stroke"
-                        [fill]="graficaR.fill"></apx-chart>
-                    <apx-chart class="grafica grafica4" [series]="graficaC.series" [chart]="graficaC.chart"
-                        [plotOptions]="graficaC.plotOptions" [labels]="graficaC.labels" [stroke]="graficaC.stroke"
-                        [fill]="graficaC.fill"></apx-chart>
+                <div class="bloque-oee" #ContenedorGraficas>
+                    <apx-chart class="grafica grafica1" [series]="G_OEE.series" [chart]="G_OEE.chart"
+                        [plotOptions]="G_OEE.plotOptions" [labels]="G_OEE.labels" [stroke]="G_OEE.stroke"
+                        [fill]="G_OEE.fill" #grafica1></apx-chart>
+                    <apx-chart class="grafica grafica2" [series]="G_D.series" [chart]="G_D.chart"
+                        [plotOptions]="G_D.plotOptions" [labels]="G_D.labels" [stroke]="G_D.stroke"
+                        [fill]="G_D.fill"></apx-chart>
+                    <apx-chart class="grafica grafica3" [series]="G_R.series" [chart]="G_R.chart"
+                        [plotOptions]="G_R.plotOptions" [labels]="G_R.labels" [stroke]="G_R.stroke"
+                        [fill]="G_R.fill"></apx-chart>
+                    <apx-chart class="grafica grafica4" [series]="G_C.series" [chart]="G_C.chart"
+                        [plotOptions]="G_C.plotOptions" [labels]="G_C.labels" [stroke]="G_C.stroke"
+                        [fill]="G_C.fill"></apx-chart>
                 </div>
             </section>
         </div>
