@@ -35,19 +35,23 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.graficaOEE.defineLabel("OEE");
-    this.graficaOEE.defineValue(100);
+    this.graficaOEE.defineValue(80);
+    this.graficaOEE.defineColors(50, 80, 100);
     this.G_OEE = this.graficaOEE.getParameters();
 
     this.graficaD.defineLabel("D");
-    this.graficaD.defineValue(100);
+    this.graficaD.defineValue(30);
+    this.graficaD.defineColors(50, 80, 100);
     this.G_D = this.graficaD.getParameters();
 
     this.graficaR.defineLabel("R");
-    this.graficaR.defineValue(100);
+    this.graficaR.defineValue(90);
+    this.graficaR.defineColors(50, 80, 100);
     this.G_R = this.graficaR.getParameters();
 
     this.graficaC.defineLabel("C");
-    this.graficaC.defineValue(100);
+    this.graficaC.defineValue(90);
+    this.graficaC.defineColors(50, 80, 100);
     this.G_C = this.graficaC.getParameters();
   }
 
@@ -56,23 +60,27 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
     const height = 200;
     if (width && height) {
       this.graficaOEE.defineLabel("OEE");
-      this.graficaOEE.defineValue(100);
+      this.graficaOEE.defineValue(80);
       this.graficaOEE.defineSize(width+40, height+40);
+      // this.graficaOEE.defineSizeFont("25px","25px")
       this.G_OEE = this.graficaOEE.getParameters();
 
       this.graficaD.defineLabel("D");
-      this.graficaD.defineValue(100);
+      this.graficaD.defineValue(30);
       this.graficaD.defineSize(width-14, height-14);
+      // this.graficaD.defineSizeFont("20px","20px")
       this.G_D = this.graficaD.getParameters();
 
       this.graficaR.defineLabel("R");
-      this.graficaR.defineValue(100);
+      this.graficaR.defineValue(90);
       this.graficaR.defineSize(width-14, height-14);
+      // this.graficaR.defineSizeFont("20px","20px")
       this.G_R = this.graficaR.getParameters();
 
       this.graficaC.defineLabel("C");
-      this.graficaC.defineValue(100);
+      this.graficaC.defineValue(90);
       this.graficaC.defineSize(width-14, height-14);
+      // this.graficaC.defineSizeFont("20px","20px")
       this.G_C = this.graficaC.getParameters();
     }
   }

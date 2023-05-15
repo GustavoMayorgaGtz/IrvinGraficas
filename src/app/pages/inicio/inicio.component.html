@@ -4,16 +4,50 @@
     </div>
     <div class="container-primary">
         <div class="cards">
-            <span class="title green" >Selladora 1</span>
-            <div class="graph"></div>
+            <span class="title" >Selladora 1
+                <div class="semaforo green"></div>
+            </span>
+            <div class="graph">
+                <apx-chart
+                [series]="serie"
+                [chart]="chartRadialBar" 
+                [labels]="labels"
+                [plotOptions]="plotOptions"
+                [fill]="fill"
+               ></apx-chart>
+            </div>
+            <div class="focus"></div>
+        </div>
+
+        <div class="cards">
+            <span class="title" >Selladora 2
+                <div class="semaforo yellow"></div>
+            </span>
+            <div class="graph">
+                <apx-chart
+                [series]="serie"
+                [chart]="chartRadialBar" 
+                [labels]="labels"
+                [plotOptions]="plotOptions"
+                [fill]="fill"
+               ></apx-chart>
+            </div>
+            <div class="focus"></div>
         </div>
         <div class="cards">
-            <span class="title yellow">Selladora 1</span>
-            <div class="graph"></div>
-        </div>
-        <div class="cards">
-            <span class="title red">Selladora 1</span>
-            <div class="graph"></div>
+            <span class="title" >Selladora 3
+                <div class="semaforo red"></div>
+            </span>
+            <div class="graph">
+                <apx-chart
+                [series]="serie"
+                [chart]="chartRadialBar" 
+                [labels]="labels"
+                [plotOptions]="plotOptions"
+                [fill]="fill"
+               ></apx-chart>
+            </div>
+            <div class="focus"></div>
         </div>
     </div>
 </div>

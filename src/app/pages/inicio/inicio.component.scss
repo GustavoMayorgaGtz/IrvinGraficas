@@ -1,4 +1,4 @@
-.container-primary{
+.container-primary {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-.container-primary > .cards{
+.container-primary > .cards {
     width: 250px;
     height: 300px;
     margin: 20px;
@@ -19,27 +19,70 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 5fr;
     transition: all 0.3s;
-    &:hover{
+    position: relative;
+
+    .focus {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.048);
+        transition: all 0.5s;
+    }
+
+    &:hover>.focus {
+        transition: all 0.5s;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    &:hover {
         transition: all 0.3s;
         transform: scale(1.01);
         cursor: pointer;
     }
-    .title{
+
+    .title {
         width: 100%;
         font-weight: bold;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        background-color: rgb(192, 205, 216);
     }
-    
-    .green{
+
+    .green {
         background-color: rgb(74, 182, 74);
+        border: 2px solid rgb(63, 122, 63);
     }
-    .yellow{
+
+    .yellow {
         background-color: rgb(225, 225, 16);
+        border: 2px solid rgb(160, 160, 27);
     }
-    .red{
+
+    .red {
         background-color: rgb(227, 46, 46);
+        border: 2px solid rgb(179, 47, 47);
     }
+}
+
+apx-chart {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.semaforo {
+    width: 30px;
+    height: 30px;
+   
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+
 }
