@@ -34,14 +34,14 @@ export type ChartOptions = {
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.scss','../general-style.scss']
+  styleUrls: ['./inicio.component.scss', '../general-style.scss']
 })
 
 export class InicioComponent implements OnInit {
   ngOnInit(): void {
   }
-  serie:ApexNonAxisChartSeries = [100];// [Number((Math.random()*100).toFixed(2))];
-  chartRadialBar:ApexChart = {
+  serie: ApexNonAxisChartSeries = [100]//[Number((Math.random()*100).toFixed(2))];
+  chartRadialBar: ApexChart = {
     zoom: {
       enabled: true,
       autoScaleYaxis: false,
@@ -50,14 +50,14 @@ export class InicioComponent implements OnInit {
     width: "100%",
     height: "100%",
     type: "radialBar",
-    offsetY: 30,
-    };
-  
-  plotOptions: ApexPlotOptions= {
+    offsetY: 40,
+  };
+
+  plotOptions: ApexPlotOptions = {
     radialBar: {
-      startAngle: -80,
-      endAngle: 80,
-      track:{
+      startAngle: -90,
+      endAngle: 90,
+      track: {
         background: "#ABB2B9",
         strokeWidth: "100%",
         margin: 0, // margin is in pixels
@@ -71,7 +71,7 @@ export class InicioComponent implements OnInit {
       },
       hollow: {
         size: "70%",
-        
+
       },
       dataLabels: {
         show: true,
@@ -89,10 +89,10 @@ export class InicioComponent implements OnInit {
         }
       }
     }
-  
+
   };
-  labels: string[]=  ["OEE"];  
-  fill:any = {
+  labels: string[] = ["OEE"];
+  fill: any = {
     type: "gradient",
     gradient: {
       shade: "dark",
@@ -101,156 +101,34 @@ export class InicioComponent implements OnInit {
       opacityFrom: .7,
       opacityTo: 1,
       type: "horizontal",
-      colorStops: this.definircolor(this.serie)
+      colorStops: this.definircolor(100, 20, 60, 100)
     }
   }
-  definircolor(porcentaje:any){
-    var colors=[{}];
-    if(porcentaje>0 && porcentaje<=20){
-      return colors=[
-        {
-          offset: 0,
-          color: "#e32e2e",
-          opacity: 1
-        }
-      ]
-    }else{
-      if(porcentaje>20 && porcentaje<=50){
-        colors= [
-          {
-            offset: 0,
-            color: "#e32e2e",
-            opacity: 1
-          }
-        ,
-          {
-            offset: 20,
-            color: "#f0b300",
-            opacity: 1
-          },
-          {
-            offset: 60,
-            color: "#eaca00",
-            opacity: 1
-          },
-          {
-            offset: 100,
-            color: "#e1e110",
-            opacity: 1
-          }
-        ]
-      }else{
-        if(porcentaje>50 && porcentaje<=70){
-          colors= [
-            {
-              offset: 0,
-              color: "#e32e2e",
-              opacity: 1
-            }
-          ,
-            {
-              offset: 25,
-              color: "#f0b300",
-              opacity: 1
-            },
-            {
-              offset: 50,
-              color: "#eaca00",
-              opacity: 1
-            },
-            {
-              offset: 75,
-              color: "#e1e110",
-              opacity: 1
-            },
-            {
-              offset: 100,
-              color: "#cbdc1a",
-              opacity: 1
-            }
-          ]
-        }else{
-          if(porcentaje>70 && porcentaje<=80){
-            colors= [
-              {
-                offset: 0,
-                color: "#e32e2e",
-                opacity: 1
-              }
-            ,
-              {
-                offset: 20,
-                color: "#f0b300",
-                opacity: 1
-              },
-              {
-                offset: 40,
-                color: "#eaca00",
-                opacity: 1
-              },
-              {
-                offset: 60,
-                color: "#e1e110",
-                opacity: 1
-              },
-              {
-                offset: 80,
-                color: "#cbdc1a",
-                opacity: 1
-              },
-              {
-                offset: 100,
-                color: "#a0d12d",
-                opacity: 1
-              }
-            ]
+  definircolor(value: number, min: number, inter: number, max: number) {
+    let color1 = "#448b2f", color2 = "#4fbb2e";
 
-          }else{
-            if(porcentaje>80 && porcentaje<=100){
-             colors=[
-                {
-                  offset: 0,
-                  color: "#e32e2e",
-                  opacity: 1
-                }
-              ,
-                {
-                  offset: 20,
-                  color: "#f0b300",
-                  opacity: 1
-                },
-                {
-                  offset: 40,
-                  color: "#eaca00",
-                  opacity: 1
-                },
-                {
-                  offset: 50,
-                  color: "#e1e110",
-                  opacity: 1
-                },
-                {
-                  offset: 60,
-                  color: "#cbdc1a",
-                  opacity: 1
-                },
-                {
-                  offset: 80,
-                  color: "#a0d12d",
-                  opacity: 1
-                },
-                {
-                  offset: 100,
-                  color: "#4ab64a",
-                  opacity: 1
-                }
-              ]
-            }
-          }
-        }
-      }
+    if (value <= min) {
+      color1 = "#e70e0e";
+      color2 = "#ff0d0d";
     }
-    return colors;
+    if (value > min && value <= inter) {
+      color1 = "#f5f519";
+      color2 = "#ffff09";
+    }
+    if (value > inter && value <= max) {
+      color1 = "#147e14";
+      color2 = "#4fbb2e";
+    }
+    return [{
+      offset: 0,
+      color: color1,
+      opacity: 1
+    },
+    {
+      offset: 100,
+      color: color2,
+      opacity: 1
+    }];
   }
 }
 
