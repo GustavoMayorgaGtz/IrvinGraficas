@@ -118,21 +118,6 @@ export class RadialGraph{
           }
     }
 
-    defineColors(r1:number=20,am1:number=50,am2:number=70,v1:number=80){
-        this.fill={
-            type: "gradient",
-            gradient: {
-              shade: "dark",
-              shadeIntensity: 0.4,
-              inverseColors: false,
-              opacityFrom: .7,
-              opacityTo: 1,
-              type: "horizontal",
-              colorStop: this.generacolor(r1,am1,am2,v1,this.series),
-          }
-        }
-    }
-
     getParameters(){
         const series = this.series;
         const chart = this.chart;
@@ -145,152 +130,31 @@ export class RadialGraph{
         }
        return radialGraph;
     }
-    generacolor(r1:number,am1:number,am2:number,v1:number,porcentaje:any){
-      var colors=[{}];
-      if(porcentaje>0 && porcentaje<=r1){
-        return colors=[
-          {
-            offset: 0,
-            color: "#e32e2e",
-            opacity: 1
-          }
-        ]
-      }else{
-        if(porcentaje>r1 && porcentaje<=am1){
-          colors= [
-            {
-              offset: 0,
-              color: "#e32e2e",
-              opacity: 1
-            }
-          ,
-            {
-              offset: 20,
-              color: "#f0b300",
-              opacity: 1
-            },
-            {
-              offset: 60,
-              color: "#eaca00",
-              opacity: 1
-            },
-            {
-              offset: 100,
-              color: "#e1e110",
-              opacity: 1
-            }
-          ]
-        }else{
-          if(porcentaje>am1 && porcentaje<=am2){
-            colors= [
-              {
-                offset: 0,
-                color: "#e32e2e",
-                opacity: 1
-              }
-            ,
-              {
-                offset: 25,
-                color: "#f0b300",
-                opacity: 1
-              },
-              {
-                offset: 50,
-                color: "#eaca00",
-                opacity: 1
-              },
-              {
-                offset: 75,
-                color: "#e1e110",
-                opacity: 1
-              },
-              {
-                offset: 100,
-                color: "#cbdc1a",
-                opacity: 1
-              }
-            ]
-          }else{
-            if(porcentaje>am2 && porcentaje<=v1){
-              colors= [
-                {
-                  offset: 0,
-                  color: "#e32e2e",
-                  opacity: 1
-                }
-              ,
-                {
-                  offset: 20,
-                  color: "#f0b300",
-                  opacity: 1
-                },
-                {
-                  offset: 40,
-                  color: "#eaca00",
-                  opacity: 1
-                },
-                {
-                  offset: 60,
-                  color: "#e1e110",
-                  opacity: 1
-                },
-                {
-                  offset: 80,
-                  color: "#cbdc1a",
-                  opacity: 1
-                },
-                {
-                  offset: 100,
-                  color: "#a0d12d",
-                  opacity: 1
-                }
-              ]
+    
+    defineColors(value: number, min: number, inter: number, max: number) {
+      let color1 = "#448b2f", color2 = "#4fbb2e";
   
-            }else{
-              if(porcentaje>v1 && porcentaje<=100){
-               colors=[
-                  {
-                    offset: 0,
-                    color: "#e32e2e",
-                    opacity: 1
-                  }
-                ,
-                  {
-                    offset: 20,
-                    color: "#f0b300",
-                    opacity: 1
-                  },
-                  {
-                    offset: 40,
-                    color: "#eaca00",
-                    opacity: 1
-                  },
-                  {
-                    offset: 50,
-                    color: "#e1e110",
-                    opacity: 1
-                  },
-                  {
-                    offset: 60,
-                    color: "#cbdc1a",
-                    opacity: 1
-                  },
-                  {
-                    offset: 80,
-                    color: "#a0d12d",
-                    opacity: 1
-                  },
-                  {
-                    offset: 100,
-                    color: "#4ab64a",
-                    opacity: 1
-                  }
-                ]
-              }
-            }
-          }
-        }
+      if (value <= min) {
+        color1 = "#e70e0e";
+        color2 = "#ff0d0d";
       }
-      return colors;
+      if (value > min && value <= inter) {
+        color1 = "#f5f519";
+        color2 = "#ffff09";
+      }
+      if (value > inter && value <= max) {
+        color1 = "#147e14";
+        color2 = "#4fbb2e";
+      }
+      return [{
+        offset: 0,
+        color: color1,
+        opacity: 1
+      },
+      {
+        offset: 100,
+        color: color2,
+        opacity: 1
+      }];
     }
 }
