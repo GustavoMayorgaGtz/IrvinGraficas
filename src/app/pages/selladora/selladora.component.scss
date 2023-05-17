@@ -40,7 +40,7 @@
     height: 240px;
     display: flex;
     justify-content: center;
-    background-color: whitesmoke;
+    // background-color: whitesmoke;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -110,7 +110,7 @@
 //---------Bloque  tiempo (section2)-------
 .container-primary-tiempo {
     width: 90%;
-    height: auto;
+    height: 100%;
     margin: 20px auto;
     overflow: hidden;
     border: 1px solid rgb(188, 188, 188);
@@ -122,19 +122,30 @@
 
 .container-tiempoO {
     width: 100%;
-    height: 350px;
+    min-height: 350px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: whitesmoke;
+    // background-color: whitesmoke;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-.bloque-tiempo {
-    width: 48%;
-    max-width: 600px;
+.bloque-tiempoL{
+    width: 60%;
+    max-width: 800px;
     min-width: 500px;
+}
+.bloque-tiempoR{
+    width: 30%;
+    max-width: 600px;
+    min-width: 250px;
+}
+
+.bloque-tiempoL,
+.bloque-tiempoR{
+
     height: auto;
     padding: 20px;
     box-sizing: border-box;
