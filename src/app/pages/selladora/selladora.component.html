@@ -36,13 +36,13 @@
                             <span class="option">Job ID:
                                 <span class="optionSelected">34</span>
                             </span>
-                            <span class="option">Inicio: 
+                            <span class="option">Inicio:
                                 <span class="optionSelected">07/03/2023 07:00:00</span>
                             </span>
-                            <span class="option">Duracion Actual: 
+                            <span class="option">Duracion Actual:
                                 <span class="optionSelected">04:04:34</span>
                             </span>
-                            <span class="option">Duracion Planeada: 
+                            <span class="option">Duracion Planeada:
                                 <span class="optionSelected">15:00:00</span>
                             </span>
                         </div>
@@ -66,7 +66,7 @@
             </section>
         </div>
         <!---->
-        <div class="container-data">
+        <div class="container-primary-tiempo">
             <section>
                 <div class="bloque">
                     <div class="container-title">
@@ -74,40 +74,117 @@
                         <div class="title">Tiempo de operacion</div>
                     </div>
                 </div>
-                <div class="container-informacion">
-                    <div class="bloque-informacion">
-                        <div class="informacion">
-
-                            OEE (Overall Equipment Effectiveness) es un indicador utilizado en la gestión de la
-                            producción
-                            para
-                            medir la eficiencia y el rendimiento de una máquina, línea de producción o planta
-                            industrial.
-                            Proporciona una visión integral de la eficiencia general de los equipos utilizados en un
-                            proceso
-                            de
-                            producción.
-
+                <div class="container-tiempoO">
+                    <div class="bloque-tiempo">
+                        <div class="tiempoO_L">
+                            <span class="t1">Tiempo de operacion</span>
+                            <span>Fecha seleccionada</span>
+                            <span class="time">17/05/2023 07:00 - 17/05/2023 15:00</span>
+                            <div class="container-agroup">
+                                <label for="cbx_sManual">Seleccion manual:</label>
+                                <input type="checkbox" id="cbx_sManual">
+                            </div>
+                            <div class="container-columns">
+                                <div class="column1">
+                                    <input type="button" value="Dia Actual">
+                                    <input type="button" value="Turno 1">
+                                </div>
+                                <div class="column2">
+                                    <input type="button" value="Dia Anterior">
+                                    <input type="button" value="Turno 2">
+                                </div>
+                                <div class="column3">
+                                    <input type="button" value="Semana Actual">
+                                    <input type="button" value="Turno 3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tiempoO_R">
+                            <div class="fila">
+                                <div class="title">Total de operacion:</div>
+                                <div class="data">73.45 min</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">T. Paros Programados:</div>
+                                <div class="data">8 min</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">T. Paros Cortos:</div>
+                                <div class="data">10.27 min</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">T. Muerto:</div>
+                                <div class="data">190.58 min</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">T. Prog. Produccion:</div>
+                                <div class="data">277 min</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">% de Produccion:</div>
+                                <div class="data">27%</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">T. total:</div>
+                                <div class="data">277 min</div>
+                            </div>
+                            <hr>
+                            <div class="fila">
+                                <div class="title">Cantidad Producida:</div>
+                                <div class="data">75,553 env.</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Cantidad Esperada:</div>
+                                <div class="data">45,073 env.</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Merma:</div>
+                                <div class="data">0 env.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bloque-informacion">
-                        <div class="informacion-B">
-                            <div class="title">Orden Actual</div>
-                            <span class="option">Tipo de Evento:
-                                <span class="optionSelected">Produccion</span>
-                            </span>
-                            <span class="option">Job ID:
-                                <span class="optionSelected">34</span>
-                            </span>
-                            <span class="option">Inicio: 
-                                <span class="optionSelected">07/03/2023 07:00:00</span>
-                            </span>
-                            <span class="option">Duracion Actual: 
-                                <span class="optionSelected">04:04:34</span>
-                            </span>
-                            <span class="option">Duracion Planeada: 
-                                <span class="optionSelected">15:00:00</span>
-                            </span>
+
+                    <div class="bloque-tiempo">
+                        <div class="container-produccion">
+                            <span class="t1">Produccion Tiempo Actual</span>
+                            <div class="fila">
+                                <div class="title">Arreglo:</div>
+                                <div class="data">
+                                    <select id="slc_Arreglo">
+                                        <option>Fecha 1</option>
+                                        <option>Fecha 2</option>
+                                        <option>Fecha 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Produccion Actual:</div>
+                                <div class="data">154,852 env.</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Capacidad Esperada:</div>
+                                <div class="data">126,273 env.</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Desempeño:</div>
+                                <div class="data">121.72 kg</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Velocidad Nominal:</div>
+                                <div class="data">71,000 env./hr</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Merma:</div>
+                                <div class="data">0 env.</div>
+                            </div>
+                            <div class="fila">
+                                <div class="title">Estado:</div>
+                                <div class="data">
+                                   <span style="background-color: rgb(21, 197, 21); color: black; padding: 2px 10px; font-weight: bold;">Operando</span>
+                                </div>
+                            </div>
+
+                
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,8 @@
         font-weight: bold;
     }
 }
-.container-informacion{
+
+.container-informacion {
     width: 100%;
     height: 240px;
     display: flex;
@@ -72,7 +73,7 @@
         font-family: 'Noto Sans', sans-serif;
     }
 
-    .informacion-B{
+    .informacion-B {
         width: 100%;
         height: 100%;
         background-color: rgb(45, 45, 45);
@@ -85,17 +86,20 @@
         color: white;
         font-size: 12px;
         font-family: 'Noto Sans', sans-serif;
-        .title{
+
+        .title {
             font-size: 14px;
-            
+
         }
-        .option{
+
+        .option {
             margin-top: 3px;
             margin-left: 15px;
             box-sizing: border-box;
             font-size: 12px;
             border-bottom: 1px solid rgb(86, 86, 86);
-            .optionSelected{
+
+            .optionSelected {
                 margin-left: 3px;
                 color: rgb(63, 166, 250);
             }
@@ -103,7 +107,191 @@
     }
 }
 
- .bloque-oee {
+//---------Bloque  tiempo (section2)-------
+.container-primary-tiempo {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid rgb(188, 188, 188);
+    background-color: white;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.123);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.container-tiempoO {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.bloque-tiempo {
+    width: 48%;
+    max-width: 600px;
+    min-width: 500px;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgb(45, 45, 45);
+    margin: 5px;
+    display: flex;
+
+    .t1 {
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        width: 100%;
+        margin: 0px auto;
+        border-bottom: 1px solid gray;
+        display: flex;
+        justify-content: center;
+    }
+
+    .time {
+        color: rgb(188, 211, 235);
+    }
+
+    .tiempoO_L {
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 3px;
+        padding: 5px;
+        border: 1px solid rgb(75, 75, 75);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+
+        .container-columns {
+            margin-top: 10px;
+            width: 100%;
+            // background-color: red;
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+
+            .column1 {
+                // background-color: pink;
+                overflow: hidden;
+            }
+
+            .column2 {
+                // background-color: purple;
+                overflow: hidden;
+            }
+
+            .column3 {
+                // background-color: blue;
+                overflow: hidden;
+            }
+
+            input[type="button"] {
+                width: 100%;
+                margin-bottom: 5px;
+                font-size: 12px;
+                box-sizing: border-box;
+                cursor: pointer;
+                color: white;
+                background-color: rgb(75, 75, 75);
+                box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.148);
+                border: 1px solid black;
+
+                &:hover {
+                    background-color: rgb(188, 211, 235);
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .tiempoO_R {
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 3px;
+        padding: 5px;
+        width: 50%;
+        height: 100%;
+        border: 1px solid rgb(75, 75, 75);
+
+        .fila {
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+
+            .title {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .data {
+                margin-left: 5px;
+                grid-column: 2;
+                color: rgb(176, 206, 246);
+                grid-row: 1;
+            }
+        }
+
+    }
+
+    .container-produccion {
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 3px;
+        padding: 5px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgb(75, 75, 75);
+
+        .t1 {
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            width: 100%;
+            margin: 0px auto;
+            border-bottom: 1px solid gray;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .fila {
+            margin: 3px;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+
+            .title {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .data {
+                margin-left: 5px;
+                grid-column: 2;
+                color: rgb(176, 206, 246);
+                grid-row: 1;
+            }
+        }
+    }
+}
+
+//---------Bloque  tiempo (section2) end-------
+.bloque-oee {
     display: flex;
     width: 100%;
     flex-wrap: nowrap;
