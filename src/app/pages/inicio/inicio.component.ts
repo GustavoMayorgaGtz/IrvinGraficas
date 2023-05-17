@@ -40,7 +40,7 @@ export type ChartOptions = {
 export class InicioComponent implements OnInit {
   ngOnInit(): void {
   }
-  serie: ApexNonAxisChartSeries = [100]//[Number((Math.random()*100).toFixed(2))];
+  serie: ApexNonAxisChartSeries = [30]//[Number((Math.random()*100).toFixed(2))];
   chartRadialBar: ApexChart = {
     zoom: {
       enabled: true,
@@ -101,7 +101,7 @@ export class InicioComponent implements OnInit {
       opacityFrom: .7,
       opacityTo: 1,
       type: "horizontal",
-      colorStops: this.definircolor(100, 20, 60, 100)
+      colorStops: this.definircolor(20, 20, 60, 100)
     }
   }
   definircolor(value: number, min: number, inter: number, max: number) {

@@ -16,6 +16,10 @@ const routes: Routes = [
       {
         path: "selladora",
         loadChildren: () => import("./selladora/selladora.module").then(m => m.SelladoraModule)
+      },
+      {
+        path: "merma",
+        loadChildren: () => import("./merma/merma.module").then(m => m.MermaModule)
       }
       
     ] 
