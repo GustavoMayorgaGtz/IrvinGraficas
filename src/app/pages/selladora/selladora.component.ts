@@ -34,6 +34,7 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    
     this.graficaOEE.defineLabel("OEE");
     this.graficaOEE.defineValue(80);
     this.graficaOEE.defineColors(50, 80, 100);
