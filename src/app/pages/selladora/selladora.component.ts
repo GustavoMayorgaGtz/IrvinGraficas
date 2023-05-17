@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { RadialGraph } from './RadialGraph';
 import { GraficaRadial } from 'src/app/Interfaces';
+import { RadialGraph } from 'src/app/clases/RadialGraph';
 
 
 

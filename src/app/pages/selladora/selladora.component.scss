@@ -40,7 +40,6 @@
     height: 240px;
     display: flex;
     justify-content: center;
-    // background-color: whitesmoke;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -127,24 +126,24 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // background-color: whitesmoke;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-.bloque-tiempoL{
+.bloque-tiempoL {
     width: 60%;
     max-width: 800px;
     min-width: 500px;
 }
-.bloque-tiempoR{
+
+.bloque-tiempoR {
     width: 30%;
     max-width: 600px;
     min-width: 250px;
 }
 
 .bloque-tiempoL,
-.bloque-tiempoR{
+.bloque-tiempoR {
 
     height: auto;
     padding: 20px;
@@ -183,26 +182,24 @@
         color: white;
         font-size: 14px;
 
+        
+
         .container-columns {
             margin-top: 10px;
             width: 100%;
-            // background-color: red;
             height: 100%;
             display: flex;
             flex-wrap: nowrap;
 
             .column1 {
-                // background-color: pink;
                 overflow: hidden;
             }
 
             .column2 {
-                // background-color: purple;
                 overflow: hidden;
             }
 
             .column3 {
-                // background-color: blue;
                 overflow: hidden;
             }
 
@@ -235,6 +232,7 @@
         border: 1px solid rgb(75, 75, 75);
 
         .fila {
+            margin: 5px 0px;
             width: 100%;
             color: white;
             font-size: 14px;
@@ -253,8 +251,9 @@
                 color: rgb(176, 206, 246);
                 grid-row: 1;
             }
-        }
 
+           
+        }
     }
 
     .container-produccion {
@@ -276,9 +275,9 @@
             display: flex;
             justify-content: center;
         }
-        
+
         .fila {
-            margin: 3px;
+            margin: 5px 0px;
             width: 100%;
             color: white;
             font-size: 14px;
@@ -296,6 +295,9 @@
                 grid-column: 2;
                 color: rgb(176, 206, 246);
                 grid-row: 1;
+            }
+            select{
+                width: 120px;
             }
         }
     }
