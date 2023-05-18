@@ -34,17 +34,14 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router
-    
-    ) {
-  }
+  ) { }
 
   ngAfterViewInit(): void {
     if (this.ContenedorGraficas) {
       this.contenedor_graficas = this.ContenedorGraficas.nativeElement;
-      this.define_graficas();
+      this.define_graficas(40, 14);
     }
   }
-
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -52,7 +49,7 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
       const id = params['id'];
       this.title = title;
     });
-    
+
     this.graficaOEE.defineLabel("OEE");
     this.graficaOEE.defineValue(80);
     this.graficaOEE.defineColors(50, 80, 100);
@@ -72,40 +69,40 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
     this.graficaC.defineValue(90);
     this.graficaC.defineColors(50, 80, 100);
     this.G_C = this.graficaC.getParameters();
- 
+
     this.G_P = this.graficaProcess.getParameters();
     this.G_PH = this.graficaProcessHour.getParameters();
   }
 
-  back(){
+  back() {
     this.router.navigate(['home']);
   }
 
-  define_graficas() {
+  define_graficas(w1: number, w2: number) {
     const width = this.contenedor_graficas ? (this.contenedor_graficas.getBoundingClientRect().width / 4) : undefined;
     const height = 200;
     if (width && height) {
       this.graficaOEE.defineLabel("OEE");
       this.graficaOEE.defineValue(80);
-      this.graficaOEE.defineSize(width+40, height+40);
+      this.graficaOEE.defineSize(width + w1, height + w1);
       // this.graficaOEE.defineSizeFont("25px","25px")
       this.G_OEE = this.graficaOEE.getParameters();
 
       this.graficaD.defineLabel("D");
       this.graficaD.defineValue(30);
-      this.graficaD.defineSize(width-14, height-14);
+      this.graficaD.defineSize(width - w2, height - w2);
       // this.graficaD.defineSizeFont("20px","20px")
       this.G_D = this.graficaD.getParameters();
 
       this.graficaR.defineLabel("R");
       this.graficaR.defineValue(90);
-      this.graficaR.defineSize(width-14, height-14);
+      this.graficaR.defineSize(width - w2, height - w2);
       // this.graficaR.defineSizeFont("20px","20px")
       this.G_R = this.graficaR.getParameters();
 
       this.graficaC.defineLabel("C");
       this.graficaC.defineValue(90);
-      this.graficaC.defineSize(width-14, height-14);
+      this.graficaC.defineSize(width - w2, height - w2);
       // this.graficaC.defineSizeFont("20px","20px")
       this.G_C = this.graficaC.getParameters();
     }
@@ -113,6 +110,6 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
-    this.define_graficas();
+    this.define_graficas(40, 14);
   }
 }
