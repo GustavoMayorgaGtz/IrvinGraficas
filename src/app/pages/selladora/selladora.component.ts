@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { GraficaRadial } from 'src/app/Interfaces';
+import { GraficaLineal, GraficaRadial } from 'src/app/Interfaces';
+import { BarGraph } from 'src/app/clases/BarGraph';
+import { LineGraph } from 'src/app/clases/LineGraph';
 import { RadialGraph } from 'src/app/clases/RadialGraph';
 
 
@@ -18,10 +20,14 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
   public graficaD = new RadialGraph();
   public graficaR = new RadialGraph();
   public graficaC = new RadialGraph();
+  public graficaProcess = new LineGraph();
+  public graficaProcessHour = new BarGraph();
   public G_OEE!: GraficaRadial;
   public G_D!: GraficaRadial;
   public G_R!: GraficaRadial;
   public G_C!: GraficaRadial;
+  public G_P!: GraficaLineal;
+  public G_PH!: GraficaLineal;
 
   constructor() {
   }
@@ -54,6 +60,10 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
     this.graficaC.defineValue(90);
     this.graficaC.defineColors(50, 80, 100);
     this.G_C = this.graficaC.getParameters();
+ 
+    this.G_P = this.graficaProcess.getParameters();
+    this.G_PH = this.graficaProcessHour.getParameters();
+
   }
 
   define_graficas() {

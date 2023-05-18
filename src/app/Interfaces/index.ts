@@ -37,4 +37,9 @@ export interface GraficaLineal {
     yaxis: ApexYAxis,
     title: ApexTitleSubtitle
 }
+
+export interface randomData{
+    data: number[],
+    labels: string[]
+}
 //-----------------------------------------

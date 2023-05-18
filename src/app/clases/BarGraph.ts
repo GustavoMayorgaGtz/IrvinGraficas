@@ -24,7 +24,7 @@ export type ChartOptions = {
 };
 
 
-export class LineGraph {
+export class BarGraph {
     dataLabels: ApexDataLabels = {
         
         enabled: false
@@ -48,7 +48,7 @@ export class LineGraph {
         },
         width: "90%",
         height: "90%",
-        type: "area",
+        type: "bar",
     }
     xaxis: ApexXAxis = {
         categories: [],
@@ -117,14 +117,17 @@ export class LineGraph {
         labels: []
     };
     randomData_Event(){
-        for(let i = 0; i < 100; i++){
+        //Contamos de prueba con 4 horas
+
+        for(let i = 0; i < 4; i++){
             const time = new Date();
-           this.randomData.data.push(parseInt((Math.random() * 2).toString()));
+           this.randomData.data.push(parseInt((Math.random() * 1000).toString()));
            const hour = time.getHours().toString() 
            const minute = time.getMinutes().toString();
            const second = time.getSeconds().toString();
-           const timeOutput = hour +":"+minute+":"+second+"hrs";
-           this.randomData.labels.push(timeOutput);
+        //    const timeOutput = hour +":"+minute+":"+second+"hrs";
+           
+           this.randomData.labels.push((i+1).toString()+":00 hrs");
         }
         this.series[0].data = this.randomData.data;
         this.xaxis.categories = this.randomData.labels;

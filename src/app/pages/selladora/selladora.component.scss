@@ -26,6 +26,7 @@
         width: 10px;
         height: 20px;
         background-color: rgb(39, 111, 187);
+        
     }
 
     .title {
@@ -304,6 +305,22 @@
 }
 
 //---------Bloque  tiempo (section2) end-------
+
+
+//---------Bloque  produccion (section3) open-------
+.container-primary-operando {
+    width: 90%;
+    height: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid rgb(188, 188, 188);
+    background-color: white;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.123);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+//---------Bloque  produccion (section3) close-------
 .bloque-oee {
     display: flex;
     width: 100%;

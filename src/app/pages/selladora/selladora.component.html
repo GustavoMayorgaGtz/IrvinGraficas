@@ -201,24 +201,34 @@
         </div>
         <!---->
         <!---->
-        <div class="container-primary-tiempo">
+        <div class="container-primary-operando">
             <section>
                 <div class="bloque">
                     <div class="container-title">
                         <div class="line"></div>
                         <div class="title">Operando</div>
                     </div>
-                    <apx-chart
-                    [series]="series"
-                    [chart]="chart"
-                    [xaxis]="xaxis"
-                    [yaxis]="yaxis"
-                    [title]="title"
-                    [dataLabels]="dataLabels"
-                    [stroke]="stroke"
-                  ></apx-chart>
+                    <apx-chart [style.height.px]="300" [series]="G_P.series" [chart]="G_P.chart" [xaxis]="G_P.xaxis"
+                        [yaxis]="G_P.yaxis" [title]="G_P.title" [dataLabels]="G_P.dataLabels"
+                        [stroke]="G_P.stroke"></apx-chart>
                 </div>
-               
+
+            </section>
+        </div>
+        <!---->
+        <!---->
+        <div class="container-primary-operando">
+            <section>
+                <div class="bloque">
+                    <div class="container-title">
+                        <div class="line"></div>
+                        <div class="title">Produccion por hora</div>
+                    </div>
+                    <apx-chart [style.height.px]="300" [series]="G_PH.series" [chart]="G_PH.chart" [xaxis]="G_PH.xaxis"
+                        [yaxis]="G_PH.yaxis" [title]="G_PH.title" [dataLabels]="G_PH.dataLabels"
+                        [stroke]="G_PH.stroke"></apx-chart>
+                </div>
+
             </section>
         </div>
         <!---->
