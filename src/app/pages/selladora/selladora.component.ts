@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GraficaLineal, GraficaRadial } from 'src/app/Interfaces';
 import { BarGraph } from 'src/app/clases/BarGraph';
 import { LineGraph } from 'src/app/clases/LineGraph';
@@ -15,6 +16,7 @@ import { RadialGraph } from 'src/app/clases/RadialGraph';
 export class SelladoraComponent implements OnInit, AfterViewInit {
 
   @ViewChild('ContenedorGraficas') ContenedorGraficas !: ElementRef<HTMLDivElement>;
+  public title!: string;
   public contenedor_graficas!: HTMLDivElement;
   public graficaOEE = new RadialGraph();
   public graficaD = new RadialGraph();
@@ -29,7 +31,11 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
   public G_P!: GraficaLineal;
   public G_PH!: GraficaLineal;
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+    
+    ) {
   }
 
   ngAfterViewInit(): void {
@@ -39,7 +45,13 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
     }
   }
 
+
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const title = params['title'];
+      const id = params['id'];
+      this.title = title;
+    });
     
     this.graficaOEE.defineLabel("OEE");
     this.graficaOEE.defineValue(80);
@@ -63,7 +75,10 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
  
     this.G_P = this.graficaProcess.getParameters();
     this.G_PH = this.graficaProcessHour.getParameters();
+  }
 
+  back(){
+    this.router.navigate(['home']);
   }
 
   define_graficas() {

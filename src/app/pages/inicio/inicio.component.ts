@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 import {
   ApexAxisChartSeries,
@@ -10,7 +11,6 @@ import {
   ApexDataLabels,
   ApexStroke,
   ApexPlotOptions,
-  ApexFill,
   ApexNonAxisChartSeries
 } from "ng-apexcharts";
 
@@ -38,8 +38,26 @@ export type ChartOptions = {
 })
 
 export class InicioComponent implements OnInit {
-  ngOnInit(): void {
+
+  public titles: string[] = ['Selladora 1','Selladora 2','Selladora 3','Selladora 4','Selladora 5','Selladora 6'];
+
+  constructor(private router: Router){
+
   }
+  ngOnInit(): void {
+ 
+  }
+
+  open_selladora_event(title: string, id: number){
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        title,
+        id
+      }
+    }
+     this.router.navigate(['/selladora'], navigationExtras);
+  }
+
   serie: ApexNonAxisChartSeries = [100]//[Number((Math.random()*100).toFixed(2))];
   chartRadialBar: ApexChart = {
     zoom: {
