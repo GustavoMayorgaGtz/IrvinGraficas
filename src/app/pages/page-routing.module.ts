@@ -20,6 +20,10 @@ const routes: Routes = [
       {
         path: "merma",
         loadChildren: () => import("./merma/merma.module").then(m => m.MermaModule)
+      },
+      {
+        path: "pantalla",
+        loadChildren: () => import("./tarjetpantalla/tarjetpantalla.module").then(m => m.TarjetpantallaModule)
       }
       
     ] 

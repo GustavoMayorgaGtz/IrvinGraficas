@@ -1,8 +1,7 @@
 <div class="body">
-    <div class="nav">
+    <div class="box">
         <h3>CAUSALES DE MERMA DEL REPORTE DEL OPERADOR A DEPARTAMENTO DE IMPRESION</h3>
     </div>
-    <hr>
     <div class="encabezado">
         <div>
             <label for="fecha">Fecha: </label>
@@ -29,7 +28,10 @@
     <hr>
     <div class="operador ">
         <div class="elemento">
-            <label form="nomoperador">Nombre del operador: </label>
+            <div>
+
+                <label form="nomoperador">Nombre del operador: </label>
+            </div>
             <select name="nomoperador" class="inputelement">
                 <option value="Nombre Operador">Nombre operador</option>
 
@@ -80,55 +82,98 @@
             <input name="consumom2" type="number" class="inputelement">
         </div>
     </div>
-    <hr style="width: 90%; height: 1px;">
+    <hr>
     <div class="actividades">
         <div class="table">
-            <detalle-merma [Entrada]="'cfvgfvfdvf'"> </detalle-merma>
+            <div>
+                <detalle-merma> </detalle-merma>
+            </div>
+            <div class="observacion">
+                <label form="observaciones">
+                    <h3>Obsercaciones: </h3>
+                </label>
+                <input name="observeciones" type="text" class="observaciones">
+            </div>
         </div>
         <div class="detemerma">
-            <div>
-                <button>Guardar</button>
-                <button>Limpiar</button>
-                <button>Registrar Eventos</button>
-            </div>
-            <div>
+            <div class="btn2">
+                <div>
+                    <button>Guardar</button>
+                    <button>Limpiar</button>
+                    <button>Registrar Eventos</button>
+                </div>
                 <div class="">
                     <label form="totcausal" class="">Total por causal</label>
                     <input name="totcausal" type="number" class="inputelement">
                 </div>
-                <div>
-                    <h4>Merma de porceso de Impresion</h4>
-                    <div >
-                        <label for="envrollo">Total de merma en tira por envoltura de rollos</label>
-                        <input name="envrollo">
-                    </div>
-                    <div>
-                        <label for="cuadro">Total de merma en cuadro (procesos)</label>
-                        <input name="cuadro">
-                    </div>
-                    <h4>Merma de extrusion</h4>
-                    <div>
-
-                        <label for="envrollo">Total de merma en tira carretes</label>
-                        <input name="envrollo">
-                    </div>
-                    <div class="Firma">
-                            <label>Firma del operador A</label>
-                            <div class="line"></div>
-                    </div>
-                    <div class="Firma">
-                        <label>Firma del jefe o supervisor</label>
-                        <div class="line"></div>
-                    </div>
-                    <div class="Firma">
-                        <label>Firma del Responsable SAP</label>
-                        <div class="line"></div>
-                    </div>
-
-
-                </div>
             </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Merma de porceso de Impresion
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="td1">
+                        <tr>
+                            <td class="td2 tdborderlado tdborderbot">
+                                <label for="envrollo">Total de merma en tira por envoltura de rollos</label>
+
+                            <td class="td2 tdborderbot" >
+                                0<!-- <input name="envrollo"> -->
+                            </td>
+                        <tr>
+                        <tr>
+                            <td class="td2 tdborderlado" >
+                                <label for="cuadro">Total de merma en cuadro (procesos)</label>
+                            </td>
+                            <td class="td2">
+                                0<!-- <input name="cuadro"> -->
+                            </td>
+                        </tr>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tr>
+                        <th>
+                            Merma de extrusion
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="td1">
+                    <tr>
+                        <td class="td2 tdborderlado" > <label for="envrollo">Total de merma en tira carretes</label></td>
+                        <td class="td2">0
+                             <!-- <input name="envrollo"> -->
+                            </td>
+                    </tr>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Firma">
+                <div class="line"></div>
+                <label>Firma del operador A</label>
+            </div>
+            <div class="Firma">
+                <div class="line"></div>
+                <label>Firma del jefe o supervisor</label>
+            </div>
+            <div class="Firma">
+                <div class="line"></div>
+                <label>Firma del responsable SAP</label>
+            </div>
+
         </div>
     </div>
-
+    <!-- <div class="nuevaclasif">
+    </div> -->
+    <!-- <div class="margentote"></div>
+    <div class="margentote"></div> -->
 </div>
