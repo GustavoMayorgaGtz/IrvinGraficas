@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { RadialGraph } from './RadialGraph';
-import { GraficaRadial } from 'src/app/Interfaces';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { GraficaLineal, GraficaRadial } from 'src/app/Interfaces';
+import { BarGraph } from 'src/app/clases/BarGraph';
+import { LineGraph } from 'src/app/clases/LineGraph';
+import { RadialGraph } from 'src/app/clases/RadialGraph';
 
 
 
@@ -10,42 +13,107 @@ import { GraficaRadial } from 'src/app/Interfaces';
   styleUrls: ['./selladora.component.scss', '../general-style.scss']
 })
 
-export class SelladoraComponent implements OnInit {
- 
-  constructor() {
+export class SelladoraComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('ContenedorGraficas') ContenedorGraficas !: ElementRef<HTMLDivElement>;
+  public title!: string;
+  public contenedor_graficas!: HTMLDivElement;
+  public graficaOEE = new RadialGraph();
+  public graficaD = new RadialGraph();
+  public graficaR = new RadialGraph();
+  public graficaC = new RadialGraph();
+  public graficaProcess = new LineGraph();
+  public graficaProcessHour = new BarGraph();
+  public G_OEE!: GraficaRadial;
+  public G_D!: GraficaRadial;
+  public G_R!: GraficaRadial;
+  public G_C!: GraficaRadial;
+  public G_P!: GraficaLineal;
+  public G_PH!: GraficaLineal;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+
+  ngAfterViewInit(): void {
+    if (this.ContenedorGraficas) {
+      this.contenedor_graficas = this.ContenedorGraficas.nativeElement;
+      this.define_graficas(40, 14);
+    }
   }
 
-
-  public graficaOEE!: GraficaRadial;
-  public graficaD!: GraficaRadial;
-  public graficaR!: GraficaRadial;
-  public graficaC!: GraficaRadial;
-  public graficaE!: GraficaRadial;
   ngOnInit(): void {
-    const graficaE = new RadialGraph();
-    graficaE.defineLabel("Calidad");
-    graficaE.defineValue(100);
-    graficaE.defineColors(50,60,70,80);
-    this.graficaE = graficaE.getParameters();
+    this.route.queryParams.subscribe(params => {
+      const title = params['title'];
+      const id = params['id'];
+      this.title = title;
+    });
 
-    const graficaOEE = new RadialGraph();
-    graficaOEE.defineLabel("OEE");
-    graficaOEE.defineValue(100);
-    this.graficaOEE= graficaOEE.getParameters();
-    
-    const graficaD = new RadialGraph();
-    graficaD.defineLabel("Disponibilidad");
-    graficaD.defineValue(100);
-    this.graficaD = graficaD.getParameters();
+    this.graficaOEE.defineLabel("OEE");
+    this.graficaOEE.defineValue(80);
+    this.graficaOEE.defineColors(50, 80, 100);
+    this.G_OEE = this.graficaOEE.getParameters();
 
-    const graficaR = new RadialGraph();
-    graficaR.defineLabel("Rendimiento");
-    graficaR.defineValue(100);
-    this.graficaR = graficaR.getParameters();
+    this.graficaD.defineLabel("D");
+    this.graficaD.defineValue(30);
+    this.graficaD.defineColors(50, 80, 100);
+    this.G_D = this.graficaD.getParameters();
 
-    const graficaC = new RadialGraph();
-    graficaC.defineLabel("Calidad");
-    graficaC.defineValue(100);
-    this.graficaC = graficaC.getParameters();
+    this.graficaR.defineLabel("R");
+    this.graficaR.defineValue(90);
+    this.graficaR.defineColors(50, 80, 100);
+    this.G_R = this.graficaR.getParameters();
+
+    this.graficaC.defineLabel("C");
+    this.graficaC.defineValue(90);
+    this.graficaC.defineColors(50, 80, 100);
+    this.G_C = this.graficaC.getParameters();
+
+    this.G_P = this.graficaProcess.getParameters();
+    this.G_PH = this.graficaProcessHour.getParameters();
+  }
+
+  back() {
+    this.router.navigate(['home']);
+  }
+
+  merma_event(){
+    this.router.navigate(["merma"])
+  }
+
+  define_graficas(w1: number, w2: number) {
+    const width = this.contenedor_graficas ? (this.contenedor_graficas.getBoundingClientRect().width / 4) : undefined;
+    const height = 200;
+    if (width && height) {
+      this.graficaOEE.defineLabel("OEE");
+      this.graficaOEE.defineValue(80);
+      this.graficaOEE.defineSize(width + w1, height + w1);
+      // this.graficaOEE.defineSizeFont("25px","25px")
+      this.G_OEE = this.graficaOEE.getParameters();
+
+      this.graficaD.defineLabel("D");
+      this.graficaD.defineValue(30);
+      this.graficaD.defineSize(width - w2, height - w2);
+      // this.graficaD.defineSizeFont("20px","20px")
+      this.G_D = this.graficaD.getParameters();
+
+      this.graficaR.defineLabel("R");
+      this.graficaR.defineValue(90);
+      this.graficaR.defineSize(width - w2, height - w2);
+      // this.graficaR.defineSizeFont("20px","20px")
+      this.G_R = this.graficaR.getParameters();
+
+      this.graficaC.defineLabel("C");
+      this.graficaC.defineValue(90);
+      this.graficaC.defineSize(width - w2, height - w2);
+      // this.graficaC.defineSizeFont("20px","20px")
+      this.G_C = this.graficaC.getParameters();
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.define_graficas(40, 14);
   }
 }

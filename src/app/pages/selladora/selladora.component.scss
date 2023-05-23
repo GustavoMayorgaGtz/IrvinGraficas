@@ -1,12 +1,30 @@
+$backgroundsections: rgba(255, 255, 255, 0.786);
+$colortitlesections: black;
+
+.container-primary {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: block;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23747474' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
 .container-data {
     width: 90%;
-    height: fit-content;
+    height: auto;
     margin: 20px auto;
     border: 1px solid rgb(188, 188, 188);
-    background-color: white;
+    background-color: $backgroundsections;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.123);
     border-radius: 5px;
     padding: 20px;
+}
+
+.seccion1 {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .bloque {
@@ -16,7 +34,30 @@
     border-bottom: 1px solid rgb(144, 144, 144);
 }
 
-.bloque>.container-title {
+.bloque-oee {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    overflow: hidden;
+
+    .grafica1 {
+        grid-column: 1;
+    }
+
+    .grafica2 {
+        grid-column: 2;
+    }
+
+    .grafica3 {
+        grid-column: 3;
+    }
+
+    .grafica4 {
+        grid-column: 4;
+    }
+}
+
+.bloque > .container-title {
     display: flex;
     height: 30px;
     align-items: center;
@@ -26,13 +67,26 @@
         width: 10px;
         height: 20px;
         background-color: rgb(39, 111, 187);
+
     }
 
     .title {
         font-size: 20px;
         margin-left: 5px;
         font-weight: bold;
+        color: $colortitlesections;
     }
+}
+
+.container-informacion {
+    width: 100%;
+    min-height: 240px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .bloque-informacion {
@@ -53,6 +107,7 @@
         border-radius: 5px;
         border: 1px solid rgb(75, 75, 75);
         padding: 5px;
+        box-sizing: border-box;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -61,25 +116,278 @@
         text-align: center;
         font-family: 'Noto Sans', sans-serif;
     }
+
+    .informacion-B {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(45, 45, 45);
+        border-radius: 5px;
+        border: 1px solid rgb(75, 75, 75);
+        padding: 5px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 12px;
+        font-family: 'Noto Sans', sans-serif;
+
+        .title {
+            font-size: 14px;
+
+        }
+
+        .option {
+            margin-top: 3px;
+            margin-left: 15px;
+            box-sizing: border-box;
+            font-size: 12px;
+            border-bottom: 1px solid rgb(86, 86, 86);
+
+            .optionSelected {
+                margin-left: 3px;
+                color: rgb(63, 166, 250);
+            }
+        }
+    }
 }
 
-.bloque-oee{
-    display: grid;
+//---------Bloque  tiempo (section2)-------
+.container-primary-tiempo {
+    width: 90%;
+    height: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid rgb(188, 188, 188);
+    background-color: $backgroundsections;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.123);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.container-tiempoO {
     width: 100%;
-    grid-column: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    min-height: 350px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.bloque-tiempoL {
+    width: 60%;
+    max-width: 800px;
+    min-width: 500px;
+}
+
+.bloque-tiempoR {
+    width: 30%;
+    max-width: 600px;
+    min-width: 250px;
+}
+
+.bloque-tiempoL,
+.bloque-tiempoR {
+
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgb(45, 45, 45);
+    margin: 5px;
+    display: flex;
+
+    .t1 {
+        font-weight: bold;
+        font-size: 16px;
+        color: white;
+        width: 100%;
+        margin: 0px auto;
+        border-bottom: 1px solid gray;
+        display: flex;
+        justify-content: center;
+    }
+
+    .time {
+        color: rgb(188, 211, 235);
+    }
+
+    .tiempoO_L {
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 3px;
+        padding: 5px;
+        border: 1px solid rgb(75, 75, 75);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-size: 14px;
+
+
+
+        .container-columns {
+            margin-top: 10px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+
+            .column1 {
+                overflow: hidden;
+            }
+
+            .column2 {
+                overflow: hidden;
+            }
+
+            .column3 {
+                overflow: hidden;
+            }
+
+            input[type="button"] {
+                width: 100%;
+                margin-bottom: 5px;
+                font-size: 12px;
+                box-sizing: border-box;
+                cursor: pointer;
+                color: white;
+                background-color: rgb(75, 75, 75);
+                box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.148);
+                border: 1px solid black;
+
+                &:hover {
+                    background-color: rgb(188, 211, 235);
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .tiempoO_R {
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 3px;
+        padding: 5px;
+        width: 50%;
+        height: 100%;
+        border: 1px solid rgb(75, 75, 75);
+
+        .fila {
+            margin: 5px 0px;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+
+            .title {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .data {
+                margin-left: 5px;
+                grid-column: 2;
+                color: rgb(176, 206, 246);
+                grid-row: 1;
+            }
+        }
+    }
+
+    .container-produccion {
+        overflow: hidden;
+        box-sizing: border-box;
+        margin: 3px;
+        padding: 5px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgb(75, 75, 75);
+
+        .t1 {
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            width: 100%;
+            margin: 0px auto;
+            border-bottom: 1px solid gray;
+            display: flex;
+            justify-content: center;
+        }
+
+        .fila {
+            margin: 5px 0px;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+
+            .title {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .data {
+                margin-left: 5px;
+                grid-column: 2;
+                color: rgb(176, 206, 246);
+                grid-row: 1;
+            }
+
+            select {
+                width: 120px;
+            }
+        }
+    }
+}
+
+//---------Bloque  tiempo (section2) end-------
+
+
+//---------Bloque  produccion (section3) open-------
+.container-primary-operando {
+    width: 90%;
+    height: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid rgb(188, 188, 188);
+    background-color: $backgroundsections;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.123);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+//---------Bloque  produccion (section3) close-------
+
+@media screen and (max-width: 700px){
+    .bloque-oee {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
     
-    .grafica1{
-        grid-column: 1;
-        background-color: red;
+        .grafica1 {
+            grid-column: 1;
+        }
+    
+        .grafica2 {
+            grid-column: 2;
+        }
+    
+        .grafica3 {
+            grid-column: 3;
+        }
+    
+        .grafica4 {
+            grid-column: 4;
+        }
     }
-    .grafica2{
-        grid-column: 2;
-    }
-    .grafica3{
-        grid-column: 3;
-    }
-    .grafica4{
-        grid-column: 4;
-    }
+    
 }
