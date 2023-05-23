@@ -144,6 +144,20 @@
         grid-template-rows: 1fr;
         transition: all 0.3s;
         position: relative;
+        z-index: 2;
+
+        .deathTime{
+            width: 200px;
+            height: 100%;
+            position: absolute;
+            top:0px;
+            z-index: 1;
+            right: -200px;
+            background-color: rgb(136, 136, 87);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .focus {
             position: absolute;
