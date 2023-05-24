@@ -152,11 +152,13 @@
             position: absolute;
             top:0px;
             z-index: 1;
-            right: -200px;
-            background-color: rgb(136, 136, 87);
+            right: -202px;
+            background-color: rgba(177, 177, 100, 0.836);
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 1px solid black;
+            box-sizing: border-box;
         }
 
         .focus {

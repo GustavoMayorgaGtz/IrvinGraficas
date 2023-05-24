@@ -7,7 +7,7 @@ class SQL {
 
   executeStatement1() {
     var config = {
-      server: 'DESKTOP-2VMTS8V\SQLEXPRESS',  //update me
+      server: 'DESKTOP-2K5EH0R\ION',  //update me
       authentication: {
         type: 'default',
         options: {

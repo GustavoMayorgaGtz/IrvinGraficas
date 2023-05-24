@@ -28,6 +28,7 @@
         <div [class]="container_cards_className">
 
             <div class="cards">
+                <div class="deathTime" *ngIf="container_cards_className === 'container-cards-slim'">Tiempo en paro: 07:34</div>
                 <span class="title">selladora 1
                     <div class="semaforo-a green"></div>
                 </span>
@@ -35,54 +36,11 @@
                     <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
                         [fill]="grafica1.fill"></apx-chart>
                 </div>
-                <!-- (click)="open_selladora_event(titulo, i)" -->
-                <div class="focus"></div>
+                
+                <div class="focus" (click)="open_selladora_event('Selladora 1', 1)"></div>
             </div>
-            <div class="cards">
-                <div class="deathTime"></div>
-                <span class="title">selladora 2
-                    <div class="semaforo-a yellow"></div>
-                </span>
-                <div class="graph">
-                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
-                        [fill]="grafica1.fill"></apx-chart>
-                </div>
-                <!-- (click)="open_selladora_event(titulo, i)" -->
-                <div class="focus"></div>
-            </div>
-            <div class="cards">
-                <span class="title">selladora 3
-                    <div class="semaforo-a red"></div>
-                </span>
-                <div class="graph">
-                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
-                        [fill]="grafica1.fill"></apx-chart>
-                </div>
-                <!-- (click)="open_selladora_event(titulo, i)" -->
-                <div class="focus"></div>
-            </div>
-            <div class="cards">
-                <span class="title">selladora 4
-                    <div class="semaforo-a green"></div>
-                </span>
-                <div class="graph">
-                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
-                        [fill]="grafica1.fill"></apx-chart>
-                </div>
-                <!-- (click)="open_selladora_event(titulo, i)" -->
-                <div class="focus"></div>
-            </div>
-            <div class="cards">
-                <span class="title">selladora 5
-                    <div class="semaforo-a yellow"></div>
-                </span>
-                <div class="graph">
-                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
-                        [fill]="grafica1.fill"></apx-chart>
-                </div>
-                <!-- (click)="open_selladora_event(titulo, i)" -->
-                <div class="focus"></div>
-            </div>
+        
+           
             
 
         </div>
