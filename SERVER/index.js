@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-// const conexion = require("./conexion");
-// const SQL = require('./conexion');
-// const sql = new SQL();
-// sql.executeStatement1();
+require('dotenv').config();
+
 app.listen(3000, () => {
     console.log("servidor ejecutandose...");
+    console.table({ user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        server: process.env.SQLSERVER,
+        database: process.env.DB_NAME})
 })
