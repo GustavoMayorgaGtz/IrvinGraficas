@@ -78,6 +78,10 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
     this.router.navigate(['home']);
   }
 
+  merma_event(){
+    this.router.navigate(["merma"])
+  }
+
   define_graficas(w1: number, w2: number) {
     const width = this.contenedor_graficas ? (this.contenedor_graficas.getBoundingClientRect().width / 4) : undefined;
     const height = 200;

@@ -6,7 +6,7 @@ const routes: Routes = [
     path: "",
     children: [
       {
-        path: "login",
+        path: "",
         loadChildren: () => import("./login/login.module").then((m => m.LoginModule))
     },
       {
@@ -16,6 +16,14 @@ const routes: Routes = [
       {
         path: "selladora",
         loadChildren: () => import("./selladora/selladora.module").then(m => m.SelladoraModule)
+      },
+      {
+        path: "merma",
+        loadChildren: () => import("./merma/merma.module").then(m => m.MermaModule)
+      },
+      {
+        path: "pantalla",
+        loadChildren: () => import("./tarjetpantalla/tarjetpantalla.module").then(m => m.TarjetpantallaModule)
       }
       
     ] 

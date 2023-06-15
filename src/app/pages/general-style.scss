@@ -29,11 +29,30 @@ body {
 }
 
 .nav {
-    width: 100%;
+    display: flex;
+    width: 100% ;
     height: 55px;
     background-color: rgb(27, 27, 27);
     border-bottom: 1px solid rgb(184, 184, 184);
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.183);
+    position: relative;
+
+    .merma{
+        width: 200px;
+        cursor: pointer;
+        color: white;
+        z-index: 2;
+        font-weight: bolder;
+        font-size: 16px;
+        text-decoration: underline;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .title {
         color: white;

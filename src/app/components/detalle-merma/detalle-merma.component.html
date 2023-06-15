@@ -1,0 +1,23 @@
+<div class="contenedor">
+    <table>
+        <tr>
+            <th class="w1">Descripcion</th>     
+            <th class="w1">Causal</th>
+            <th class="w3">SAP</th>
+            <th class="w2">Notas</th>
+        </tr>
+        <tr *ngFor="let fila of datos; let i = index">
+            <td class="w1" >{{fila.Descripcion}}</td>
+            <td [colSpan]="3">
+            <ng-container *ngFor="let causal of fila.Causales">
+                <tr>
+                    <td class="w1"> {{causal.Nombre}}</td>
+                    <td class="w3"> {{causal.SAP}}</td>
+                    <td class="w2"> {{causal.Notas}}</td>
+                </tr>
+            </ng-container>
+        </td>
+    </tr>
+    </table>
+
+</div>

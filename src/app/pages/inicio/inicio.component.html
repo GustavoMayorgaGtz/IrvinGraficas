@@ -1,6 +1,9 @@
 <div class="body">
     <div class="nav">
         <div class="title">Selladoras</div>
+        <div class="container-filter" (click)="change_view()">
+            <img [src]="filter_state" alt="filter-image" class="filter-icon">
+        </div>
     </div>
     <div class="container-primary">
         <div class="container-informacion">
@@ -22,17 +25,24 @@
         </div>
 
         <!-- CARTAS -->
-        <div class="container-cards">
-            <div class="cards" *ngFor="let titulo of titles; let i = index">
-                <span class="title">{{titulo}}
+        <div [class]="container_cards_className">
+
+            <div class="cards">
+                <div class="deathTime" *ngIf="container_cards_className === 'container-cards-slim'">Tiempo en paro: 07:34</div>
+                <span class="title">selladora 1
                     <div class="semaforo-a green"></div>
                 </span>
                 <div class="graph">
-                    <apx-chart [series]="serie" [chart]="chartRadialBar" [labels]="labels" [plotOptions]="plotOptions"
-                        [fill]="fill"></apx-chart>
+                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
+                        [fill]="grafica1.fill"></apx-chart>
                 </div>
-                <div class="focus" (click)="open_selladora_event(titulo, i)"></div>
+                
+                <div class="focus" (click)="open_selladora_event('Selladora 1', 1)"></div>
             </div>
+        
+           
+            
+
         </div>
         <!-- CARTAS -->
     </div>

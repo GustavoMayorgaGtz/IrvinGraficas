@@ -191,7 +191,7 @@ export class RadialGraph {
   }
 
 
-  //Dependiendo del porcentaje y los demas parametros se establece un color a la grafica
+  // Dependiendo del porcentaje y los demas parametros se establece un color a la grafica
   defineColors(min: number, inter: number, max: number) {
     let color1 = "#448b2f", color2 = "#4fbb2e";
 
@@ -207,28 +207,32 @@ export class RadialGraph {
       color1 = "#147e14";
       color2 = "#4fbb2e";
     }
-
-    this.fill = {
-      type: "gradient",
-      gradient: {
-        shade: "dark",
-        type: "horizontal",
-        shadeIntensity: 0.5,
-        gradientToColors: ["#ABE5A1"],
-        inverseColors: true,
-        opacityFrom: 1,
-        opacityTo: 1,
-        colorStops:[{
-          offset: 0,
-          color: color1,
-          opacity: 1
-        },
-        {
-          offset: 100,
-          color: color2,
-          opacity: 1
-        }]
-      }
-    }
   }
+
+  // defineColors(value: number, min: number, inter: number, max: number) {
+  //     let color1 = "#448b2f", color2 = "#4fbb2e";
+  
+  //     if (value <= min) {
+  //       color1 = "#e70e0e";
+  //       color2 = "#ff0d0d";
+  //     }
+  //     if (value > min && value <= inter) {
+  //       color1 = "#f5f519";
+  //       color2 = "#ffff09";
+  //     }
+  //     if (value > inter && value <= max) {
+  //       color1 = "#147e14";
+  //       color2 = "#4fbb2e";
+  //     }
+  //     return [{
+  //       offset: 0,
+  //       color: color1,
+  //       opacity: 1
+  //     },
+  //     {
+  //       offset: 100,
+  //       color: color2,
+  //       opacity: 1
+  //     }];
+  //   }
 }
