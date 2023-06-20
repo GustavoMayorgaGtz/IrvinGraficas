@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelladoraComponent } from './selladora.component';
+import { SelladoraComponent } from './datos.component';
 
 describe('SelladoraComponent', () => {
   let component: SelladoraComponent;

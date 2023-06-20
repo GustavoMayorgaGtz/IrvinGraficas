@@ -1,6 +1,6 @@
 <div class="body">
     <div class="nav">
-        <div class="title">Selladoras</div>
+        <div class="title">Graficas</div>
         <div class="container-filter" (click)="change_view()">
             <img [src]="filter_state" alt="filter-image" class="filter-icon">
         </div>
@@ -8,19 +8,7 @@
     <div class="container-primary">
         <div class="container-informacion">
             <div class="informacion">
-                Puedes ver el estado de la selladora indicado por el circulo de color:
-                <div class="container-agroup" style="display: flex; align-items: center;">
-                    <div class="semaforo-r green"></div>
-                    - Indica un estado optimo de la selladora
-                </div>
-                <div class="container-agroup" style="display: flex; align-items: center;">
-                    <div class="semaforo-r yellow"></div>
-                    - Indica un estado de advertencia en la selladora
-                </div>
-                <div class="container-agroup" style="display: flex; align-items: center;">
-                    <div class="semaforo-r red"></div>
-                    - Indica un estado critico en la selladora
-                </div>
+                Ve el estado y los datos de las graficas
             </div>
         </div>
 
@@ -28,37 +16,47 @@
         <div [class]="container_cards_className">
 
             <div class="cards">
-                <div class="deathTime" *ngIf="container_cards_className === 'container-cards-slim'">Tiempo en paro: 07:34</div>
-                <span class="title">selladora 1
+                <div class="deathTime" *ngIf="container_cards_className === 'container-cards-slim'">Tiempo en paro:
+                    07:34</div>
+                <span class="title">Temperatura 1
                     <div class="semaforo-a green"></div>
                 </span>
                 <div class="graph">
-                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels" [plotOptions]="grafica1.plotOptions"
-                        [fill]="grafica1.fill"></apx-chart>
+                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels"
+                        [plotOptions]="grafica1.plotOptions" [fill]="grafica1.fill"></apx-chart>
                 </div>
-                
-                <div class="focus" (click)="open_selladora_event('Selladora 1', 1)"></div>
-            </div>
-        
-           
-            
 
+                <div class="focus" (click)="open_selladora_event('Temperatura 1', 1)"></div>
+            </div>
+            <div class="cards">
+                <div class="deathTime" *ngIf="container_cards_className === 'container-cards-slim'">Tiempo en paro:
+                    07:34</div>
+                <span class="title">Temperatura 2
+                    <div class="semaforo-a green"></div>
+                </span>
+                <div class="graph">
+                    <apx-chart [series]="grafica1.series" [chart]="grafica1.chart" [labels]="grafica1.labels"
+                        [plotOptions]="grafica1.plotOptions" [fill]="grafica1.fill"></apx-chart>
+                </div>
+
+                <div class="focus" (click)="open_selladora_event('Temperatura 2', 2)"></div>
+            </div>
         </div>
         <!-- CARTAS -->
     </div>
-</div>
-<footer>
-    <div class="empresa">
-        <a href="https://www.elopak.com/">
-            <img src="./assets/elopack.svg" alt="Elopak" class="empresa_icon">
-        </a>
-    </div>
-    <div class="space">
+    <footer>
+        <div class="empresa">
+            <a href="https://www.irvinproducts.com/es/">
+                <img src="./assets/irvin_logo.png" alt="Irvin" class="empresa_icon">
+            </a>
+        </div>
+        <div class="space">
 
-    </div>
-    <div class="controler">
-        <a href="https://controler.mx/">
-            <img src="./assets/controler.png" alt="Controler" class="controler_icon">
-        </a>
-    </div>
-</footer>
+        </div>
+        <div class="controler">
+            <a href="https://controler.mx/">
+                <img src="./assets/controler.png" alt="Controler" class="controler_icon">
+            </a>
+        </div>
+    </footer>
+</div>

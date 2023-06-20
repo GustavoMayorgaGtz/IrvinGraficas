@@ -14,12 +14,8 @@ const routes: Routes = [
         loadChildren: () => import("./inicio/inicio.module").then(m => m.InicioModule)
       },
       {
-        path: "selladora",
-        loadChildren: () => import("./selladora/selladora.module").then(m => m.SelladoraModule)
-      },
-      {
-        path: "merma",
-        loadChildren: () => import("./merma/merma.module").then(m => m.MermaModule)
+        path: "datos",
+        loadChildren: () => import("./datos/datos.module").then(m => m.DatosModule)
       },
       {
         path: "pantalla",

@@ -45,7 +45,7 @@ export class InicioComponent implements OnInit {
         id
       }
     }
-    this.router.navigate(['/selladora'], navigationExtras);
+    this.router.navigate(['/datos'], navigationExtras);
   }
 
   // serie: ApexNonAxisChartSeries = [100]//[Number((Math.random()*100).toFixed(2))];

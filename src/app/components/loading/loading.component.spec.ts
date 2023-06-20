@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MermaComponent } from './merma.component';
+import { LoadingComponent } from './loading.component';
 
-describe('MermaComponent', () => {
-  let component: MermaComponent;
-  let fixture: ComponentFixture<MermaComponent>;
+describe('LoadingComponent', () => {
+  let component: LoadingComponent;
+  let fixture: ComponentFixture<LoadingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MermaComponent ]
+      declarations: [ LoadingComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MermaComponent);
+    fixture = TestBed.createComponent(LoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

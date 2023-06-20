@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { setupTestingRouter } from '@angular/router/testing';
 import { GraficaLineal, GraficaRadial } from 'src/app/Interfaces';
 import { BarGraph } from 'src/app/clases/BarGraph';
 import { LineGraph } from 'src/app/clases/LineGraph';
@@ -8,12 +9,12 @@ import { RadialGraph } from 'src/app/clases/RadialGraph';
 
 
 @Component({
-  selector: 'app-selladora',
-  templateUrl: './selladora.component.html',
-  styleUrls: ['./selladora.component.scss', '../general-style.scss']
+  selector: 'app-datos',
+  templateUrl: './datos.component.html',
+  styleUrls: ['./datos.component.scss', '../general-style.scss']
 })
 
-export class SelladoraComponent implements OnInit, AfterViewInit {
+export class DatosComponent implements OnInit, AfterViewInit {
 
   @ViewChild('ContenedorGraficas') ContenedorGraficas !: ElementRef<HTMLDivElement>;
   public title!: string;
@@ -78,8 +79,31 @@ export class SelladoraComponent implements OnInit, AfterViewInit {
     this.router.navigate(['home']);
   }
 
-  merma_event(){
-    this.router.navigate(["merma"])
+  public isprint: boolean = false;  
+  print_event(){
+   this.isprint = !this.isprint;
+   this.showLoading = !this.isprint;
+  }
+
+  public showLoading: boolean = false;
+  save_data(option: string){
+    this.showLoading = true;
+    // option "excel" or "pdf"
+    setTimeout(() => {
+      switch(option){
+        case 'pdf':{
+          alert("PDF guardado.");
+          this.isprint= false;  
+          break;
+        }
+        case 'excel':{
+          alert("Excel guardado.");
+          this.isprint= false;
+          break;
+        }
+      }
+    }, 3000);
+ 
   }
 
   define_graficas(w1: number, w2: number) {

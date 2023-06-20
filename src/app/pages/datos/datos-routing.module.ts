@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MermaComponent } from './merma.component';
+import { DatosComponent } from './datos.component';
+
 
 const routes: Routes = [
   {
     path: "",
-    component: MermaComponent
+    component: DatosComponent
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MermaRoutingModule { }
+export class DatosRoutingModule { }
